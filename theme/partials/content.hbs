@@ -16,6 +16,9 @@
   </nav>
 {{/compare}}
 
+<!--
+  Nested albums
+-->
 <ul id="galleries">
  {{#each album.albums}}
  <li>
@@ -35,14 +38,22 @@
  {{/each}}
 </ul>
 
+<!--
+  Render all thumbnails
+-->
 <ul id="media">
   {{#each album.files}}
     {{> thumbnail}}
   {{/each}}
 </ul>
 
+<!--
+  Zip file link
+-->
 {{#if album.zip}}
-  <a href="{{album.zip}}">download album as a zip file</a>
+  <div id="zip">
+    Download album as a <a href="{{album.zip}}">zip file</a>.
+  </div>
 {{/if}}
 
 
